@@ -1,0 +1,1 @@
+with open("C:\\Users\\rudra\\OneDrive\\Desktop\\Python\\Python\\Mini Project\\STUDENT MANAGEMENT SYSTEM\\New.txt", 'r') as f:

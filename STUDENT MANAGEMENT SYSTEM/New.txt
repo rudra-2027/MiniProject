@@ -1,0 +1,15 @@
+Name of the student:- Rudra
+Roll Number:- 78
+Section:- BA
+Percentage:- 55
+----------------------------------
+Name of the student:- NEW
+Roll Number:- 69
+Section:- ZA
+Percentage:- 69.69
+----------------------------------
+Roll Number:- 2
+Name of the student:- Adwait
+Section:- BA
+Percentage:- 99
+----------------------------------
