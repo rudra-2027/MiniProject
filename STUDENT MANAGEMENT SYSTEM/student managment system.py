@@ -1,19 +1,41 @@
-#WAP to enter the 5 student details such as name roll number section and percentage from the user and save it into the file name as record 
 def add():
-    f=open("Record.txt",'a')
-    for i in range(1):
-        name = input("Enter the name of student ")
-        roll = input("Enter the roll number of the student ")
-        section = input("Enter the section of the student ")
-        percentage = input("Enter the percentage of the student ")
-        f.write("\nName of the student:- "+name)
-        f.write("\nRoll Number:- "+roll)
-        f.write("\nSection:- "+section)
-        f.write("\nPercentage:- "+percentage)
-        f.write("\n----------------------------------")
-        
+    f = open("Record.txt", 'r') 
+    existing_records = f.readlines()
     f.close()
-    re()
+
+    roll_numbers = [record.split(":- ")[1].strip() for i, record in enumerate(existing_records) if i % 5 == 1]
+
+    while True:
+        name = input("Enter the name of the student: ")
+        roll = input("Enter the roll number of the student: ")
+        section = input("Enter the section of the student: ")
+        while True:
+            percentage = input("Enter the percentage of the student (0-100): ")
+            try:
+                percentage = float(percentage)
+                if 0 <= percentage <= 100:
+                    break
+                else:
+                    print("Percentage must be between 0 and 100.")
+            except ValueError:
+                print("Please enter a valid percentage.")
+
+        if roll in roll_numbers:
+            print("Roll number already exists. Please enter a different roll number.")
+        else:
+            break
+
+    f = open("Record.txt", 'a')  
+    f.write("\nName of the student:- " + name)
+    f.write("\nRoll Number:- " + roll)
+    f.write("\nSection:- " + section)
+    f.write("\nPercentage:- " + str(percentage))
+    f.write("\n----------------------------------")
+    f.close()
+
+    re()  
+
+
 
 
 def re():
